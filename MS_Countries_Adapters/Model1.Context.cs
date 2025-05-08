@@ -27,6 +27,6 @@ namespace MS_Countries_Adapters
     
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
-        public virtual DbSet<Municipality> Municipalities { get; set; }
+        public virtual DbSet<City> Cities { get; set; }
     }
 }

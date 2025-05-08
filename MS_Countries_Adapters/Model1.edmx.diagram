@@ -7,7 +7,7 @@
       <Diagram DiagramId="7d7661700d4d417f9885aaea0bedd057" Name="Diagram1">
         <EntityTypeShape EntityType="CountriesModel.Country" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CountriesModel.Department" Width="1.5" PointX="3.75" PointY="0.75" />
-        <EntityTypeShape EntityType="CountriesModel.Municipality" Width="1.5" PointX="6" PointY="2.125" />
+        <EntityTypeShape EntityType="CountriesModel.City" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -23,7 +23,10 @@ public interface IService
     [OperationContract]
     Task<Country> ReadCountry(short id);
 
+    #endregion
+
     #region Departments
+
     [OperationContract]
     Task<Department> CreateDepartments(Department request);
 
@@ -42,10 +45,31 @@ public interface IService
 
     Task<Department> ReadDepartment(short id);
 
+    #endregion
+
+
     #region Cities
 
+    [OperationContract]
 
-     
+    Task<City> CreateCities(City request);
+
+    [OperationContract]
+
+    Task<List<City>> ReadCities();
+
+    [OperationContract]
+    Task<City> UpdateCities(City request);
+
+    [OperationContract]
+
+    Task<City> DeleteCity(short id);
+
+    [OperationContract]
+
+    Task<City> ReadCity(short id);
+    
+    #endregion
 
 }
 

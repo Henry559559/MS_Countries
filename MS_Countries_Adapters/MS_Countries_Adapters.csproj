@@ -53,6 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="City.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="CountriesAdapter\CountryAdapter.cs" />
     <Compile Include="CountriesAdapter\ICountryAdapter.cs" />
     <Compile Include="Country.cs">
@@ -78,11 +81,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="MunicipalitiesAdapter\IMunicipalityAdapter.cs" />
-    <Compile Include="MunicipalitiesAdapter\MunicipalityAdapter.cs" />
-    <Compile Include="Municipality.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
+    <Compile Include="CitiesAdapter\ICityAdapter.cs" />
+    <Compile Include="CitiesAdapter\CityAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

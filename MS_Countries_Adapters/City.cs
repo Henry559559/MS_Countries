@@ -12,10 +12,10 @@ namespace MS_Countries_Adapters
     using System;
     using System.Collections.Generic;
     
-    public partial class Municipality
+    public partial class City
     {
-        public short IdMunicipality { get; set; }
-        public string NameMunicipality { get; set; }
+        public short IdCity { get; set; }
+        public string NameCity { get; set; }
         public bool Active { get; set; }
         public System.DateTime DateModified { get; set; }
     }

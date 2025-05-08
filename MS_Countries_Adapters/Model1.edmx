@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="CountriesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="IdCity" />
+          </Key>
+          <Property Name="IdCity" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameCity" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="Countries">
           <Key>
             <PropertyRef Name="IdCountry" />
@@ -23,19 +32,10 @@
           <Property Name="Active" Type="bit" Nullable="false" />
           <Property Name="DateModified" Type="datetime" Nullable="false" />
         </EntityType>
-        <EntityType Name="Municipalities">
-          <Key>
-            <PropertyRef Name="IdMunicipality" />
-          </Key>
-          <Property Name="IdMunicipality" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NameMunicipality" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Active" Type="bit" Nullable="false" />
-          <Property Name="DateModified" Type="datetime" Nullable="false" />
-        </EntityType>
         <EntityContainer Name="CountriesModelStoreContainer">
+          <EntitySet Name="Cities" EntityType="Self.Cities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Municipalities" EntityType="Self.Municipalities" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -53,7 +53,7 @@
         <EntityContainer Name="CountriesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Countries" EntityType="Self.Country" />
           <EntitySet Name="Departments" EntityType="CountriesModel.Department" />
-          <EntitySet Name="Municipalities" EntityType="CountriesModel.Municipality" />
+          <EntitySet Name="Cities" EntityType="CountriesModel.City" />
         </EntityContainer>
         <EntityType Name="Department">
           <Key>
@@ -64,12 +64,12 @@
           <Property Name="Active" Type="Boolean" Nullable="false" />
           <Property Name="DateModified" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
-        <EntityType Name="Municipality">
+        <EntityType Name="City">
           <Key>
-            <PropertyRef Name="IdMunicipality" />
+            <PropertyRef Name="IdCity" />
           </Key>
-          <Property Name="IdMunicipality" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NameMunicipality" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdCity" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameCity" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
           <Property Name="DateModified" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
@@ -99,13 +99,13 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Municipalities">
-            <EntityTypeMapping TypeName="CountriesModel.Municipality">
-              <MappingFragment StoreEntitySet="Municipalities">
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="CountriesModel.City">
+              <MappingFragment StoreEntitySet="Cities">
                 <ScalarProperty Name="DateModified" ColumnName="DateModified" />
                 <ScalarProperty Name="Active" ColumnName="Active" />
-                <ScalarProperty Name="NameMunicipality" ColumnName="NameMunicipality" />
-                <ScalarProperty Name="IdMunicipality" ColumnName="IdMunicipality" />
+                <ScalarProperty Name="NameCity" ColumnName="NameCity" />
+                <ScalarProperty Name="IdCity" ColumnName="IdCity" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
